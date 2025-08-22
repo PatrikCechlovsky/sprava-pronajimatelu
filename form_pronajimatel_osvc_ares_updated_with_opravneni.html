@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulář pronajímatele OSVČ</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-5">
+    <h2>Formulář pronajímatele OSVČ</h2>
+    <form>
+        <div class="form-group">
+            <label for="ico">IČO:</label>
+            <input type="text" class="form-control" id="ico" name="ico" required>
+        </div>
+
+        <div class="form-group">
+            <label for="opravneni">Typ oprávnění:</label>
+            <select id="opravneni" name="opravneni" class="form-control">
+                <option value="cteni_vybrane">Čtení vybraných informací</option>
+                <option value="cteni_vse">Čtení všech informací</option>
+                <option value="uprava_vse" selected>Úprava všech informací</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="nazev">Název subjektu:</label>
+            <input type="text" class="form-control" id="nazev" name="nazev">
+        </div>
+
+        <div class="form-group">
+            <label for="adresa">Adresa:</label>
+            <input type="text" class="form-control" id="adresa" name="adresa">
+        </div>
+
+        <div class="form-group">
+            <label for="email">E-mail:</label>
+            <input type="email" class="form-control" id="email" name="email">
+        </div>
+
+        <div class="form-group">
+            <label for="telefon">Telefon:</label>
+            <input type="tel" class="form-control" id="telefon" name="telefon">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Odeslat</button>
+    </form>
+</div>
+</body>
+</html>
