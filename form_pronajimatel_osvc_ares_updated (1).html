@@ -1,0 +1,34 @@
+
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulář pronajímatele OSVČ</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-5">
+    <h2>Formulář pronajímatele OSVČ</h2>
+    <form>
+        <div class="form-group">
+            <label for="opravneni">Typ oprávnění:</label>
+            <select id="opravneni" name="opravneni" class="form-control">
+                <option value="cteni_vybrane">Čtení vybraných informací</option>
+                <option value="cteni_vse">Čtení všech informací</option>
+                <option value="uprava_vse" selected>Úprava všech informací</option>
+            </select>
+        </div>
+        <!-- Další pole formuláře mohou být zde -->
+        <div class="form-group">
+            <label for="ico">IČO:</label>
+            <input type="text" class="form-control" id="ico" name="ico" placeholder="Zadejte IČO">
+        </div>
+        <div class="form-group">
+            <label for="nazev">Název firmy:</label>
+            <input type="text" class="form-control" id="nazev" name="nazev" placeholder="Zadejte název firmy">
+        </div>
+        <button type="submit" class="btn btn-primary">Odeslat</button>
+    </form>
+</div>
+</body>
+</html>
