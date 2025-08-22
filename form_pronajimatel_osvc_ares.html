@@ -1,0 +1,169 @@
+
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulář OSVČ</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input {
+            width: 100%;
+            max-width: 400px;
+            padding: 8px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+        }
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h2>Formulář pronajímatele – OSVČ</h2>
+    <form>
+        
+    <div class="form-group">
+        <label for="typ oprávnění">typ oprávnění</label>
+        <input type="text" id="typ oprávnění" name="typ oprávnění" maxlength="40" class="form-control">
+    </div>
+    
+    <div class="form-group">
+        <label for="Titul">Titul</label>
+        <input type="text" id="Titul" name="Titul" maxlength="40" class="form-control">
+    </div>
+    
+    <div class="form-group">
+        <label for="Jméno">Jméno</label>
+        <input type="text" id="Jméno" name="Jméno" maxlength="40" class="form-control">
+    </div>
+    
+    <div class="form-group">
+        <label for="Příjmení">Příjmení</label>
+        <input type="text" id="Příjmení" name="Příjmení" maxlength="40" class="form-control">
+    </div>
+    
+    <div class="form-group">
+        <label for="IČ">IČ</label>
+        <input type="number" id="IČ" name="IČ" maxlength="40" class="form-control">
+    </div>
+    
+    <div class="form-group">
+        <label for="DIČ">DIČ</label>
+        <input type="text" id="DIČ" name="DIČ" maxlength="40" class="form-control">
+    </div>
+    
+    <div class="form-group">
+        <label for="Datum narození">Datum narození</label>
+        <input type="text" id="Datum narození" name="Datum narození" maxlength="40" class="form-control">
+    </div>
+    
+    <div class="form-group">
+        <label for="Typ dokladu totožnosti">Typ dokladu totožnosti</label>
+        <input type="text" id="Typ dokladu totožnosti" name="Typ dokladu totožnosti" maxlength="40" class="form-control">
+    </div>
+    
+    <div class="form-group">
+        <label for="Číslo dokladu totožnosti">Číslo dokladu totožnosti</label>
+        <input type="text" id="Číslo dokladu totožnosti" name="Číslo dokladu totožnosti" maxlength="40" class="form-control">
+    </div>
+    
+    <div class="form-group">
+        <label for="Stát">Stát</label>
+        <input type="text" id="Stát" name="Stát" maxlength="40" class="form-control">
+    </div>
+    
+    <div class="form-group">
+        <label for="PSČ">PSČ</label>
+        <input type="text" id="PSČ" name="PSČ" maxlength="40" class="form-control">
+    </div>
+    
+    <div class="form-group">
+        <label for="Město">Město</label>
+        <input type="text" id="Město" name="Město" maxlength="40" class="form-control">
+    </div>
+    
+    <div class="form-group">
+        <label for="Ulice">Ulice</label>
+        <input type="text" id="Ulice" name="Ulice" maxlength="40" class="form-control">
+    </div>
+    
+    <div class="form-group">
+        <label for="Číslo popisné">Číslo popisné</label>
+        <input type="text" id="Číslo popisné" name="Číslo popisné" maxlength="40" class="form-control">
+    </div>
+    
+    <div class="form-group">
+        <label for="Telefon">Telefon</label>
+        <input type="number" id="Telefon" name="Telefon" maxlength="40" class="form-control">
+    </div>
+    
+    <div class="form-group">
+        <label for="Email">Email</label>
+        <input type="email" id="Email" name="Email" maxlength="40" class="form-control">
+    </div>
+    
+    <div class="form-group">
+        <label for="Bankovní účet / číslo banky">Bankovní účet / číslo banky</label>
+        <input type="text" id="Bankovní účet / číslo banky" name="Bankovní účet / číslo banky" maxlength="40" class="form-control">
+    </div>
+    
+    <div class="form-group">
+        <label for="Přihlašovací jméno">Přihlašovací jméno</label>
+        <input type="text" id="Přihlašovací jméno" name="Přihlašovací jméno" maxlength="40" class="form-control">
+    </div>
+    
+    <div class="form-group">
+        <label for="Přihlašovací heslo">Přihlašovací heslo</label>
+        <input type="text" id="Přihlašovací heslo" name="Přihlašovací heslo" maxlength="40" class="form-control">
+    </div>
+    
+    <div class="form-group">
+        <label for="Zástupce">Zástupce</label>
+        <input type="text" id="Zástupce" name="Zástupce" maxlength="40" class="form-control">
+    </div>
+    
+        <button type="button" onclick="fetchARESData()">Načíst z ARES</button>
+    </form>
+    
+<script>
+function fetchARESData() {
+    const ico = document.getElementById('IČ').value;
+    if (!ico) return alert('Zadejte IČ');
+
+    fetch('https://wwwinfo.mfcr.cz/cgi-bin/ares/darv_bas.cgi?ico=' + ico)
+        .then(response => response.text())
+        .then(str => (new window.DOMParser()).parseFromString(str, "text/xml"))
+        .then(data => {
+            const ns = "http://wwwinfo.mfcr.cz/ares/xml_doc/schemas/ares/ares_answer/v_1.0.3";
+            const getText = tag => data.getElementsByTagNameNS(ns, tag)[0]?.textContent || "";
+            document.getElementById('Jméno').value = getText('OF');
+            document.getElementById('Ulice').value = getText('NU');
+            document.getElementById('Město').value = getText('N');
+            document.getElementById('PSČ').value = getText('PSC');
+        })
+        .catch(err => alert('Chyba při načítání z ARES'));
+}
+</script>
+
+</body>
+</html>
