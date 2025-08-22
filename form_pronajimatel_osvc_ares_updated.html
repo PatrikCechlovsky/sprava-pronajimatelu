@@ -3,124 +3,32 @@
 <html lang="cs">
 <head>
     <meta charset="UTF-8">
-    <title>Formulář OSVČ s ARES</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            display: flex;
-            justify-content: center;
-            padding: 40px;
-        }
-        .form-container {
-            background-color: #fff;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            width: 600px;
-        }
-        .form-group {
-            display: flex;
-            align-items: center;
-            margin-bottom: 15px;
-        }
-        .form-group label {
-            flex: 0 0 180px;
-            margin-right: 10px;
-            text-align: right;
-        }
-        .form-group input,
-        .form-group select {
-            flex: 1;
-            padding: 8px;
-            border-radius: 6px;
-            border: 1px solid #ccc;
-            max-width: 300px;
-        }
-        #ares-button {
-            margin-left: 190px;
-            margin-bottom: 20px;
-            padding: 8px 16px;
-            border-radius: 6px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-        #ares-button:hover {
-            background-color: #0056b3;
-        }
-    </style>
+    <title>Formulář pronajímatele OSVČ</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
-    <div class="form-container">
-        <h2>Formulář OSVČ</h2>
+<div class="container mt-5">
+    <h2>Formulář pronajímatele OSVČ</h2>
+    <form>
         <div class="form-group">
-            <label for="typ_opravneni">Typ oprávnění:</label>
-            <select id="typ_opravneni" name="typ_opravneni">
-                
+            <label for="opravneni">Typ oprávnění:</label>
+            <select id="opravneni" name="opravneni" class="form-control">
+                <option value="cteni_vybrane">Čtení vybraných informací</option>
+                <option value="cteni_vse">Čtení všech informací</option>
+                <option value="uprava_vse" selected>Úprava všech informací</option>
             </select>
         </div>
+        <!-- Další pole formuláře mohou být zde -->
         <div class="form-group">
-            <label for="ic">IČ:</label>
-            <input type="text" id="ic" name="ic" maxlength="40">
-        </div>
-        <button id="ares-button" onclick="fetchARESData()">Načíst z ARES</button>
-        <div class="form-group">
-            <label for="jmeno">Jméno:</label>
-            <input type="text" id="jmeno" name="jmeno" maxlength="40">
+            <label for="ico">IČO:</label>
+            <input type="text" class="form-control" id="ico" name="ico" placeholder="Zadejte IČO">
         </div>
         <div class="form-group">
-            <label for="prijmeni">Příjmení:</label>
-            <input type="text" id="prijmeni" name="prijmeni" maxlength="40">
+            <label for="nazev">Název firmy:</label>
+            <input type="text" class="form-control" id="nazev" name="nazev" placeholder="Zadejte název firmy">
         </div>
-        <div class="form-group">
-            <label for="ulice">Ulice:</label>
-            <input type="text" id="ulice" name="ulice" maxlength="40">
-        </div>
-        <div class="form-group">
-            <label for="mesto">Město:</label>
-            <input type="text" id="mesto" name="mesto" maxlength="40">
-        </div>
-        <div class="form-group">
-            <label for="psc">PSČ:</label>
-            <input type="text" id="psc" name="psc" maxlength="40">
-        </div>
-        <div class="form-group">
-            <label for="typ_dokladu">Typ dokladu totožnosti:</label>
-            <select id="typ_dokladu" name="typ_dokladu">
-                
-            </select>
-        </div>
-    </div>
-
-    <script>
-        function fetchARESData() {
-            const ic = document.getElementById('ic').value;
-            if (!ic) {
-                alert('Zadejte IČ');
-                return;
-            }
-            fetch(`https://wwwinfo.mfcr.cz/cgi-bin/ares/darv_bas.cgi?ico=${ic}`)
-                .then(response => response.text())
-                .then(str => (new window.DOMParser()).parseFromString(str, "text/xml"))
-                .then(data => {
-                    const ns = "http://wwwinfo.mfcr.cz/ares/xml_doc/schemas/ares/ares_answer/v_1.0.3";
-                    const of = data.getElementsByTagNameNS(ns, "OF")[0]?.textContent || "";
-                    const nu = data.getElementsByTagNameNS(ns, "NU")[0]?.textContent || "";
-                    const n = data.getElementsByTagNameNS(ns, "N")[0]?.textContent || "";
-                    const psc = data.getElementsByTagNameNS(ns, "PSC")[0]?.textContent || "";
-
-                    document.getElementById('jmeno').value = of;
-                    document.getElementById('ulice').value = nu;
-                    document.getElementById('mesto').value = n;
-                    document.getElementById('psc').value = psc;
-                })
-                .catch(error => {
-                    console.error('Chyba při načítání z ARES:', error);
-                    alert('Nepodařilo se načíst data z ARES.');
-                });
-        }
-    </script>
+        <button type="submit" class="btn btn-primary">Odeslat</button>
+    </form>
+</div>
 </body>
 </html>
