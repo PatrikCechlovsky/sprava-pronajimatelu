@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <title>Přidat pronajímatele – Firma</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body { margin:0; font-family: Arial, sans-serif; display:flex; min-height:100vh; background-color:#f5f5f5; }
+    .sidebar { width:200px; background-color:#2f4858; color:#fff; padding:20px; box-sizing:border-box; }
+    .sidebar h2 { font-size:20px; margin-top:0; }
+    .sidebar ul { list-style:none; padding-left:0; }
+    .sidebar li { margin-bottom:10px; }
+    .sidebar a { color:#fff; text-decoration:none; display:block; padding:5px 10px; border-radius:4px; }
+    .sidebar a:hover { background-color:#3a6171; }
+    .main { flex-grow:1; padding:20px; overflow-y:auto; }
+    form { max-width:600px; margin:0 auto; background:#fff; padding:20px; border-radius:8px; box-shadow:0 2px 4px rgba(0,0,0,0.1); }
+    .form-group { margin-bottom:15px; }
+    label { display:block; font-weight:bold; margin-bottom:5px; }
+    .required { color:red; }
+    input[type="text"], input[type="date"], input[type="email"], input[type="tel"], input[type="password"], input[type="number"], select, textarea { width:100%; padding:8px; border:1px solid #ccc; border-radius:4px; box-sizing:border-box; }
+    textarea{resize:vertical;}
+    .form-actions { display:flex; justify-content:flex-end; gap:10px; margin-top:20px; }
+    .btn { padding:10px 20px; border:none; border-radius:4px; cursor:pointer; font-weight:bold; }
+    .btn-save { background-color:#4caf50; color:#fff; }
+    .btn-cancel { background-color:#bbb; color:#fff; }
+  </style>
+</head>
+<body>
+  <nav class="sidebar">
+    <h2>Navigace</h2>
+    <ul>
+      <li><a href="index.html">Dashboard</a></li>
+      <li><a href="pronajimatel.html">Pronajímatel</a></li>
+      <li><a href="nemovitost.html">Nemovitost</a></li>
+      <li><a href="byt.html">Byt / Jednotka</a></li>
+      <li><a href="najemnik.html">Nájemník</a></li>
+      <li><a href="sluzba.html">Služba</a></li>
+      <li><a href="zastupujici.html">Zástupující</a></li>
+    </ul>
+  </nav>
+  <main class="main">
+    <h1>Přidat pronajímatele – Firma</h1>
+    <form>
+      <div class="form-group">
+        <label for="id">Přidělené ID</label>
+        <input type="text" id="id">
+      </div>
+      <div class="form-group">
+        <label for="nazev">Jméno společnosti <span class="required">*</span></label>
+        <input type="text" id="nazev" required>
+      </div>
+      <div class="form-group">
+        <label for="ic">IČ <span class="required">*</span></label>
+        <input type="text" id="ic" required>
+      </div>
+      <div class="form-group">
+        <label for="dic">DIČ</label>
+        <input type="text" id="dic">
+      </div>
+      <div class="form-group">
+        <label for="stat">Stát <span class="required">*</span></label>
+        <input type="text" id="stat" required>
+      </div>
+      <div class="form-group">
+        <label for="psc">PSČ <span class="required">*</span></label>
+        <input type="text" id="psc" required>
+      </div>
+      <div class="form-group">
+        <label for="mesto">Město <span class="required">*</span></label>
+        <input type="text" id="mesto" required>
+      </div>
+      <div class="form-group">
+        <label for="ulice">Ulice <span class="required">*</span></label>
+        <input type="text" id="ulice" required>
+      </div>
+      <div class="form-group">
+        <label for="cislo_popisne">Číslo popisné <span class="required">*</span></label>
+        <input type="text" id="cislo_popisne" required>
+      </div>
+      <div class="form-group">
+        <label for="telefon">Telefon <span class="required">*</span></label>
+        <input type="tel" id="telefon" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email <span class="required">*</span></label>
+        <input type="email" id="email" required>
+      </div>
+      <div class="form-group">
+        <label for="bankovni_ucet">Bankovní účet / číslo banky <span class="required">*</span></label>
+        <input type="text" id="bankovni_ucet" required>
+      </div>
+      <div class="form-group">
+        <label for="zastupce">Zástupce <span class="required">*</span></label>
+        <select id="zastupce" required>
+          <option value="">-- Vyberte --</option>
+          <option value="new">Přidat novou zástupující osobu…</option>
+          <option value="rep1">Zástupce 1</option>
+          <option value="rep2">Zástupce 2</option>
+        </select>
+        <small><a href="zastupujici_form.html">Přidat novou zástupující osobu</a></small>
+      </div>
+      <div class="form-actions">
+        <button type="submit" class="btn btn-save">Uložit</button>
+        <button type="button" class="btn btn-cancel" onclick="history.back()">Zrušit</button>
+      </div>
+    </form>
+  </main>
+</body>
+</html>
