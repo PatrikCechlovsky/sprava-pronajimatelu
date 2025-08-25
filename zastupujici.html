@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <title>Zástupující osoba – Výběr typu</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+    }
+    nav {
+      width: 200px;
+      background-color: #333;
+      color: white;
+      padding: 20px;
+      height: 100vh;
+    }
+    nav ul {
+      list-style: none;
+      padding: 0;
+    }
+    nav li {
+      margin-bottom: 10px;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+    }
+    .content {
+      flex: 1;
+      padding: 20px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 20px;
+    }
+    .tile {
+      background-color: #4caf50;
+      color: white;
+      border-radius: 8px;
+      padding: 20px;
+      text-align: center;
+      cursor: pointer;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+      transition: background-color 0.2s;
+    }
+    .tile:hover {
+      background-color: #45a049;
+    }
+    .tile i {
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="vzor_dashboard.html"><i class="fas fa-home"></i> Dashboard</a></li>
+      <li><a href="pronajimatel.html"><i class="fas fa-user-tie"></i> Pronajímatel</a></li>
+      <li><a href="#"><i class="fas fa-city"></i> Nemovitost</a></li>
+      <li><a href="#"><i class="fas fa-home"></i> Byt</a></li>
+      <li><a href="najemnik.html"><i class="fas fa-users"></i> Nájemník</a></li>
+      <li><a href="#"><i class="fas fa-money-bill-wave"></i> Platba</a></li>
+      <li><a href="#"><i class="fas fa-concierge-bell"></i> Služba</a></li>
+      <li><a href="zastupujici.html"><i class="fas fa-user-shield"></i> Zástupující</a></li>
+    </ul>
+  </nav>
+  <div class="content">
+    <h1>Zástupující osoba – typy</h1>
+    <div class="grid">
+      <a href="zastupujici_osoba.html" class="tile">
+        <i class="fas fa-user"></i>
+        <span>Osoba</span>
+      </a>
+      <a href="zastupujici_osvc.html" class="tile">
+        <i class="fas fa-id-card"></i>
+        <span>OSVČ</span>
+      </a>
+      <a href="zastupujici_firma.html" class="tile">
+        <i class="fas fa-building"></i>
+        <span>Firma</span>
+      </a>
+      <a href="zastupujici_spolek.html" class="tile">
+        <i class="fas fa-people-group"></i>
+        <span>Spolek / Skupina</span>
+      </a>
+    </div>
+  </div>
+</body>
+</html>
