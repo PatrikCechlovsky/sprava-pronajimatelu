@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <title>Pronajímatel - Spolek/Skupina</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    body { margin:0; font-family:Arial,sans-serif; background-color:#f0f0f0; }
+    .container { display:flex; }
+    .sidebar { width:240px; background-color:#2c3e50; color:#fff; min-height:100vh; padding-top:20px; position:fixed; top:0; bottom:0; left:0; }
+    .sidebar a { display:block; color:#fff; padding:15px 20px; text-decoration:none; }
+    .sidebar a:hover { background-color:#34495e; }
+    .content { margin-left:240px; padding:20px; flex:1; }
+    h1 { margin-top:0; }
+    .add-btn { background-color:#3498db; color:white; padding:10px 20px; border:none; border-radius:4px; cursor:pointer; }
+    .add-btn:hover { background-color:#2980b9; }
+    table { width:100%; border-collapse:collapse; margin-top:20px; }
+    th, td { border:1px solid #ddd; padding:8px; text-align:left; }
+    th { background-color:#2c3e50; color:white; }
+    tr:nth-child(even) { background-color:#f9f9f9; }
+    tr:hover { background-color:#eaeaea; }
+  </style>
+</head>
+<body>
+<div class="container">
+  <nav class="sidebar">
+    <a href="pronajimatel.html"><i class="fas fa-user-tie"></i> Pronajímatel</a>
+    <a href="#"><i class="fas fa-building"></i> Nemovitost</a>
+    <a href="#"><i class="fas fa-home"></i> Byt</a>
+    <a href="#"><i class="fas fa-users"></i> Nájemník</a>
+    <a href="#"><i class="fas fa-credit-card"></i> Platba</a>
+    <a href="#"><i class="fas fa-concierge-bell"></i> Služba</a>
+  </nav>
+  <main class="content">
+    <h1>Pronajímatel – Spolek / Skupina</h1>
+    <button class="add-btn">Přidat spolek/skupinu</button>
+    <table>
+      <thead>
+        <tr>
+          <th>Název</th>
+          <th>IČO</th>
+          <th>Adresa</th>
+          <th>Email</th>
+          <th>Telefon</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Data rows will be inserted here -->
+      </tbody>
+    </table>
+  </main>
+</div>
+</body>
+</html>
