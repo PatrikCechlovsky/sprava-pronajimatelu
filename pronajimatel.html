@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <title>Pronajímatel – výběr kategorie</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body { margin:0; font-family: Arial, sans-serif; display:flex; min-height:100vh; background-color:#f5f5f5; }
+    .sidebar { width:200px; background-color:#2f4858; color:#fff; padding:20px; box-sizing:border-box; }
+    .sidebar h2 { font-size:20px; margin-top:0; }
+    .sidebar ul { list-style:none; padding-left:0; }
+    .sidebar li { margin-bottom:10px; }
+    .sidebar a { color:#fff; text-decoration:none; display:block; padding:5px 10px; border-radius:4px; }
+    .sidebar a:hover { background-color:#3a6171; }
+    .main { flex-grow:1; padding:20px; }
+    .grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(160px,1fr)); gap:20px; max-width:1000px; margin:0 auto; }
+    .tile { background-color:#4caf50; color:#fff; border-radius:8px; padding:20px; display:flex; flex-direction:column; align-items:center; justify-content:center; text-decoration:none; box-shadow:0 2px 4px rgba(0,0,0,0.2); transition:background-color .2s; }
+    .tile:hover { background-color:#45a049; }
+    .tile i { font-size:48px; margin-bottom:10px; }
+    .tile span { font-size:16px; font-weight:bold; }
+  </style>
+</head>
+<body>
+  <nav class="sidebar">
+    <h2>Navigace</h2>
+    <ul>
+      <li><a href="vzor_dashboard.html">Dashboard</a></li>
+      <li><a href="pronajimatel.html">Pronajímatel</a></li>
+      <li><a href="#">Nemovitost</a></li>
+      <li><a href="#">Byt</a></li>
+      <li><a href="#">Nájemník</a></li>
+      <li><a href="#">Platba</a></li>
+      <li><a href="#">Služba</a></li>
+    </ul>
+  </nav>
+  <main class="main">
+    <h1>Vyberte typ pronajímatele</h1>
+    <div class="grid">
+      <a class="tile" href="pronajimatel_osoba.html">
+        <i class="fas fa-user"></i>
+        <span>Osoba</span>
+      </a>
+      <a class="tile" href="pronajimatel_osvc.html">
+        <i class="fas fa-id-card"></i>
+        <span>OSVČ</span>
+      </a>
+      <a class="tile" href="pronajimatel_firma.html">
+        <i class="fas fa-building"></i>
+        <span>Firma</span>
+      </a>
+      <a class="tile" href="pronajimatel_spolek.html">
+        <i class="fas fa-people-group"></i>
+        <span>Spolek / Skupina</span>
+      </a>
+    </div>
+  </main>
+</body>
+</html>
